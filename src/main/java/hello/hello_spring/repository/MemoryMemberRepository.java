@@ -22,8 +22,8 @@ public class MemoryMemberRepository implements MemberRepository {
     }
 
     @Override
-    public Optional<Object> findAll() {
-        return Optional.of(new ArrayList<>(store.values()));
+    public List<Member> findAll() {
+        return new ArrayList<>(store.values());
     }
 
     @Override
