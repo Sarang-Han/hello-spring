@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.*;
@@ -55,7 +56,7 @@ public class MemoryMemberRepositoryTest {
         member2.setName("Spring2");
         repository.save(member2);
 
-        List<Member> result = repository.findAll();
+        List<Object> result = Collections.singletonList(repository.findAll());
 
         assertThat(result.size()).isEqualTo(2);
     }
